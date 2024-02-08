@@ -3,8 +3,10 @@
     enable = true;
     openFirewall = true;
     extraComponents = [
-      "met"
+      "cast"
       "shopping_list"
+      "shelly"
+      "met"
     ];
     config = {
       # Includes dependencies for a basic setup

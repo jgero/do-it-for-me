@@ -4,6 +4,7 @@
     ./boot.nix
     ./homeassistant.nix
     ./networking.nix
+    ./paperless.nix
     ./power.nix
     ./ssh.nix
   ];

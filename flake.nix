@@ -6,8 +6,12 @@
     url = "github:numtide/treefmt-nix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
+  inputs.agenix = {
+    url = "github:ryantm/agenix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
-  outputs = { self, nixpkgs, disko, treefmt-nix, ... }:
+  outputs = { self, nixpkgs, disko, treefmt-nix, agenix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -23,6 +27,7 @@
         inherit pkgs system;
         modules = [
           disko.nixosModules.disko
+          agenix.nixosModules.default
           ./hardware-configuration.nix
           ./disk-config.nix
           ./modules
